@@ -1,0 +1,21 @@
+ion-item{
+  --padding-start: 10px;
+  --inner-padding-end: 10px;
+  ion-thumbnail{
+    height: 100%;
+    margin-inline-end: 10px;
+    img{
+      border-radius: 10px;
+    }
+  }
+  h1{
+    font-size: 0.8rem;
+    font-weight: bold;
+  }
+  p{
+    font-size: 0.6rem;
+  }
+  ion-chip{
+    padding-inline: 2px;
+  }
+}
