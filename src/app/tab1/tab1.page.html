@@ -1,32 +1,33 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title> VideosApp </ion-title>
+    <ion-title> {{titulo}} </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">VideosApp</ion-title>
+      <ion-title size="large">{{titulo}}</ion-title>
     </ion-toolbar>
   </ion-header>
   <ion-searchbar placeholder="Buscar"></ion-searchbar>
+
   <ion-list>
-    <ion-item-sliding>
+    <ion-item-sliding *ngFor="let filme of listaVideos">
       <ion-item>
         <ion-thumbnail slot="start">
           <img
-            src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/fVzXp3NwovUlLe7fvoRynCmBPNc.jpg"
+            [src] ="filme.cartaz"
           />
         </ion-thumbnail>
         <ion-label>
           <div class="ion-text-wrap">
-            <h1>Spider Man - No way home</h1>
-            <p>16/12/2021 (BR) - 2h 28m</p>
+            <h1>{{filme.nome}}</h1>
+            <p>{{filme.lancamento}} (BR) - {{filme.duracao}}</p>
           </div>
         </ion-label>
         <ion-chip color="success" outline="true">
-          <ion-label>84%</ion-label>
+          <ion-label>{{filme.classificacao}}%</ion-label>
         </ion-chip>
       </ion-item>
 
@@ -37,79 +38,6 @@
       </ion-item-options>
     </ion-item-sliding>
 
-    <ion-item-sliding>
-      <ion-item>
-        <ion-thumbnail slot="start">
-          <img
-            src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/4j0PNHkMr5ax3IA8tjtxcmPU3QT.jpg"
-          />
-        </ion-thumbnail>
-        <ion-label>
-          <div class="ion-text-wrap">
-            <h1>Encanto</h1>
-            <p>24/11/2021 (BR) - 1h 42m</p>
-          </div>
-        </ion-label>
-        <ion-chip color="success" outline="true">
-          <ion-label>74%</ion-label>
-        </ion-chip>
-      </ion-item>
 
-      <ion-item-options side="end">
-        <ion-item-option color="light" (click)= "exibirAlertaFavorito()"
-          ><ion-icon slot="icon-only" name="star" color="laranja"></ion-icon
-        ></ion-item-option>
-      </ion-item-options>
-    </ion-item-sliding>
-
-    <ion-item-sliding>
-      <ion-item>
-        <ion-thumbnail slot="start">
-          <img
-            src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/bhY813zHKJStgUwl9kfBA3WDDPS.jpg"
-          />
-        </ion-thumbnail>
-        <ion-label>
-          <div class="ion-text-wrap">
-            <h1>Harry potter - De volta a Hogwarts</h1>
-            <p>01/01/2022 (BR) - 1h 43m</p>
-          </div>
-        </ion-label>
-        <ion-chip color="success" outline="true">
-          <ion-label>85%</ion-label>
-        </ion-chip>
-      </ion-item>
-
-      <ion-item-options side="end">
-        <ion-item-option color="light" (click)= "exibirAlertaFavorito()"
-          ><ion-icon color="laranja" slot="icon-only" name="star"></ion-icon
-        ></ion-item-option>
-      </ion-item-options>
-    </ion-item-sliding>
-
-    <ion-item-sliding>
-      <ion-item>
-        <ion-thumbnail slot="start">
-          <img
-            src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/6Sc7Tjt7aPsdghYK32mDMFeZkqJ.jpg"
-          />
-        </ion-thumbnail>
-        <ion-label>
-          <div class="ion-text-wrap">
-            <h1>Não olhe para cima</h1>
-            <p>08/12/2021 (BR) - 2h 18m</p>
-          </div>
-        </ion-label>
-        <ion-chip color="success" outline="true">
-          <ion-label>73%</ion-label>
-        </ion-chip>
-      </ion-item>
-
-      <ion-item-options side="end">
-        <ion-item-option color="light" (click)= "exibirAlertaFavorito()"
-          ><ion-icon color="laranja" slot="icon-only" name="star"></ion-icon
-        ></ion-item-option>
-      </ion-item-options>
-    </ion-item-sliding>
   </ion-list>
 </ion-content>
